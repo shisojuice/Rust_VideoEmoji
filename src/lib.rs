@@ -11,21 +11,6 @@ pub fn emoji_filter(buffer: Vec<u8>, canvas_width: u32, canvas_height: u32, dot_
     let dot_size = dot_size as usize;
     let mut new_buffer = buffer.clone(); // 元のバッファをコピーして変更を加える
 
-    for i in 0..width * height {
-        let index = i * 4; // RGBAなので4倍
-        let r = new_buffer[index] as f32;
-        let g = new_buffer[index + 1] as f32;
-        let b = new_buffer[index + 2] as f32;
-        let (h, s, l) = rgb_to_hsl(r, g, b);
-        let new_s = s * 2.0;
-        let new_s = new_s.clamp(0.0, 1.0); // 彩度が1.0まで
-        // RGBに変換
-        let (new_r, new_g, new_b) = hsl_to_rgb(h, new_s, l);
-        new_buffer[index] = new_r as u8;
-        new_buffer[index + 1] = new_g as u8;
-        new_buffer[index + 2] = new_b as u8;
-    }
-
     for y in (0..height).step_by(dot_size) {
         for x in (0..width).step_by(dot_size) {
             let mut r = 0;
