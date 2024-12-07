@@ -1,0 +1,14 @@
+body {
+  font-family: monospace;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+#canvas_zone {
+  display: grid;
+}
+
+#asciiCanvasDiv {
+    font-size: 10px;
+}

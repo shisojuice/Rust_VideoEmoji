@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="VideoEmojiFilter" />
+  <title>VideoEmojiFilter</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <h1>VideoEmojiFilter</h1>
+  <input id="emoji_chk" type="checkbox"><label for="emoji_chk">check  On:🟥🟧🟨🟩🟦🟪🟫⬛⬜<br/>check Off:😡🍊⭐🤢🥶😈💩👾👻</label>
+  <div id="canvas_zone">
+      <video style="visibility: hidden;height: 0;width: 0;position:fixed;pointer-events: none;"
+             id="myVideo" muted autoplay playsinline></video>
+      <canvas id="normalCanvas"></canvas>
+      <br />
+      <div id="asciiCanvasDiv"></div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
